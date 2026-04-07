@@ -1,0 +1,17 @@
+{
+    "name": "xcaret-arte-landing",
+    "version": "1.0.0",
+    "description": "Landing page para Hotel Xcaret Arte con agente IA optimizado",
+    "type": "module",
+    "scripts": {
+          "dev": "next dev",
+          "build": "next build",
+          "start": "next start"
+    },
+    "dependencies": {
+          "@anthropic-ai/sdk": "^0.24.0"
+    },
+    "devDependencies": {
+          "vercel": "^34.0.0"
+    }
+}
