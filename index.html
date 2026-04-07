@@ -268,70 +268,71 @@
 </footer>
 
 <script>
-const SYSTEM_PROMPT = `Eres el agente VIP de VIP Experiences, agencia certificada de Hoteles Xcaret especializada en Hotel Xcaret Arte, Riviera Maya.
-INFORMACIÓN: Hotel 5 estrellas todo incluido. Precio desde $4,500 USD por persona (vuelo+hotel+traslados). Depósito: $600 USD.
-ROL: Responde en español, tono cálido y profesional. Máximo 2 preguntas por mensaje. Si quiere reservar → wa.me/529981533910. Respuestas cortas, máximo 3-4 oraciones.`;
+  const CACHE = {};
 
-const messages = [];
-let isTyping = false;
-
-function addMsg(role, text) {
-  messages.push({role, content: text});
-  const c = document.getElementById('chatMessages');
-  const d = document.createElement('div');
-  d.className = `msg ${role==='user'?'user':'bot'}`;
-  d.innerHTML = `<div class="msg-avatar">${role==='user'?'👤':'✨'}</div><div class="msg-bubble">${text}</div>`;
-  c.appendChild(d); c.scrollTop = c.scrollHeight;
-}
-
-function showTyping() {
-  const c = document.getElementById('chatMessages');
-  const d = document.createElement('div');
-  d.id = 'typingIndicator';
-  d.innerHTML = `<div class="typing"><span></span><span></span><span></span></div>`;
-  c.appendChild(d); c.scrollTop = c.scrollHeight;
-}
-
-function hideTyping() { const el = document.getElementById('typingIndicator'); if(el) el.remove(); }
-
-async function callAI(userMsg) {
-  if(isTyping) return;
-  isTyping = true;
-  addMsg('user', userMsg);
-  showTyping();
-  try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:SYSTEM_PROMPT,messages:messages.slice(-10)})
-    });
-    const data = await res.json();
-    hideTyping();
-    addMsg('assistant', data.content?.[0]?.text || 'Escríbenos: wa.me/529981533910');
-  } catch(e) {
-    hideTyping();
-    addMsg('assistant','Hubo un problema. Escríbenos a WhatsApp: wa.me/529981533910 🙏');
+  function addMsg(role, text) {
+    const box = document.getElementById('chatMessages');
+    const div = document.createElement('div');
+    div.className = 'msg msg-' + role;
+    div.id = role === 'agent' ? 'typing' : '';
+    div.innerHTML = '<div class="msg-avatar">' + (role === 'user' ? '👤' : '✨') + '</div>' +
+      '<div class="msg-text">' + text + '</div>';
+    box.appendChild(div);
+    box.scrollTop = box.scrollHeight;
+    return div;
   }
-  isTyping = false;
-}
 
-function sendMessage() {
-  const input = document.getElementById('chatInput');
-  const text = input.value.trim();
-  if(!text) return;
-  input.value = '';
-  document.getElementById('quickReplies').style.display = 'none';
-  callAI(text);
-}
+  async function sendMessage() {
+    const input = document.getElementById('chatInput');
+    const msg = input.value.trim();
+    if (!msg) return;
 
-function sendQuick(text) {
-  document.getElementById('quickReplies').style.display = 'none';
-  callAI(text);
-}
+    input.value = '';
+    addMsg('user', msg);
 
-window.addEventListener('load', () => {
-  setTimeout(() => addMsg('assistant','¡Hola! 👋 Soy el agente VIP de VIP Experiences. ¿Para cuántas personas y en qué fechas estás pensando viajar a Hotel Xcaret Arte?'), 800);
-});
+    const typing = addMsg('agent', '...');
+    typing.id = 'typing';
+
+    try {
+      // Check cache first (Step 1)
+      const key = msg.toLowerCase().trim();
+      if (CACHE[key]) {
+        typing.querySelector('.msg-text').textContent = CACHE[key];
+        typing.id = '';
+        return;
+      }
+
+      // Call backend API (Step 2)
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: msg })
+      });
+
+      // Parse + display (Step 3)
+      const data = await res.json();
+      const reply = data.response || data.fallback || 'Escríbenos a WhatsApp: wa.me/529981533910';
+      
+      CACHE[key] = reply;
+      typing.querySelector('.msg-text').textContent = reply;
+      typing.id = '';
+
+    } catch (e) {
+      typing.querySelector('.msg-text').textContent =
+        'Hubo un problema. Escríbenos a WhatsApp: wa.me/529981533910';
+      typing.id = '';
+    }
+  }
+
+  function sendQuick(msg) {
+    document.getElementById('chatInput').value = msg;
+    sendMessage();
+  }
+
+  // Greeting on load
+  window.addEventListener('DOMContentLoaded', () => {
+    addMsg('agent', '¡Hola! Soy tu agente VIP de Xcaret Arte. ¿En qué puedo ayudarte hoy?');
+  });
 </script>
 </body>
 </html>
