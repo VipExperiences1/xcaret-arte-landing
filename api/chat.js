@@ -1,131 +1,61 @@
-import Anthropic from "@anthropic-ai/sdk";
+const Anthropic = require("@anthropic-ai/sdk");
 
-// Cache en memoria para respuestas frecuentes
-const responseCache = {
-    "¿Qué incluye el paquete?": `Tu paquete VIP incluye:
-  • Vuelo redondo desde tu ciudad
-  • Traslado aeropuerto - hotel
-    • Noches en Hotel Xcaret Arte
-  • Alimentos y bebidas premium (todo incluido)
-  • Acceso a Xcaret, Xel-Há y más parques
-  • Talleres de arte y actividades exclusivas
-  • Atención VIP personalizada
-  • Asesoría antes, durante y después del viaje`,
-
-    "¿Cuánto cuesta para 2 personas?": `El paquete parte desde $4,500 USD por persona. Para 2 personas: aproximadamente $9,000 USD + vuelo según tu ciudad de origen. Este precio incluye hotel 5 estrellas, traslados, comidas premium y acceso a todos los parques.`,
-
-  "¿Cuáles son las fechas disponibles?": `Tenemos disponibilidad todo el año. Fechas recomendadas:
-  • Verano: Junio-Agosto (clima cálido, actividades acuáticas)
-  • Otoño: Septiembre-Noviembre (paisajes hermosos)
-  • Invierno: Diciembre-Enero (ideal para escapar del frío)
-  • Primavera: Febrero-Mayo (clima perfecto)
-
-  ¿Cuál fecha te interesa?`,
-
-  "Quiero reservar": `¡Excelente! Para reservar tu paquete VIP:
-  1. Confirma número de personas y fechas
-  2. Proporciona datos de contacto
-  3. Selecciona ciudad de origen (para calcular vuelo)
-  4. Recibirás cotización final en minutos
-
-  ¿Cuántas personas viajarían y qué fechas prefieres?`
+// In-memory cache (resets per cold start, but handles hot requests instantly)
+const CACHE = {
+  "incluye": "Tu paquete VIP incluye vuelo redondo, traslados aeropuerto-hotel, noches en Hotel Xcaret Arte 5 estrellas, alimentos y bebidas premium todo incluido, acceso a parques Xcaret, Xel-Há y más, talleres de arte y atención VIP personalizada. ¿Te gustaría cotizar?",
+  "precio": "El paquete parte desde $4,500 USD por persona (vuelo + hotel + traslados + todo incluido). Para 2 personas aproximadamente $9,000 USD. El precio final depende de tu ciudad de origen y fechas. ¿Cuándo te gustaría viajar?",
+  "fecha": "Tenemos disponibilidad todo el año. Las fechas más solicitadas son junio-agosto (verano) y diciembre-enero (temporada alta). ¿Qué fechas tienes en mente?",
+  "reserva": "¡Perfecto! Para reservar necesito saber: 1) ¿Cuántas personas viajan? 2) ¿Desde qué ciudad? 3) ¿Qué fechas prefieres? Con eso te doy tu cotización exacta en minutos.",
+  "cotiza": "¡Con gusto! Solo dime: ¿cuántas personas viajan, desde qué ciudad y qué fechas prefieres? Te envío tu cotización VIP de inmediato.",
+  "hola": "¡Hola! Soy tu agente VIP de Xcaret Arte. Estoy aquí para ayudarte a planear tu experiencia 5 estrellas en la Riviera Maya. ¿Qué te gustaría saber?",
 };
 
-// Palabras clave para detección rápida
-const quickKeywords = {
-  "incluye": "¿Qué incluye el paquete?",
-  "precio": "¿Cuánto cuesta para 2 personas?",
-  "costo": "¿Cuánto cuesta para 2 personas?",
-  "fechas": "¿Cuáles son las fechas disponibles?",
-  "disponible": "¿Cuáles son las fechas disponibles?",
-  "reservar": "Quiero reservar",
-  "booking": "Quiero reservar"
-};
+const SYSTEM = `Eres el agente VIP de VIP Experiences para Hotel Xcaret Arte, Riviera Maya.
+Precio desde $4,500 USD/persona (vuelo+hotel+traslados+todo incluido).
+Responde en español, cálido y breve (máximo 2 oraciones). Si quieren reservar, pide: personas, ciudad origen y fechas.`;
 
-export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
-}
+module.exports = async function handler(req, res) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-  const { message } = req.body;
+  if (req.method === "OPTIONS") return res.status(200).end();
+  if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
-  if (!message || typeof message !== "string") {
-    return res.status(400).json({ error: "Message is required" });
-}
+  const { message } = req.body || {};
+  if (!message) return res.status(400).json({ error: "message required" });
 
-  const lowerMessage = message.toLowerCase().trim();
+  // Step 1: Check keyword cache (instant, <5ms)
+  const key = message.toLowerCase();
+  for (const [kw, reply] of Object.entries(CACHE)) {
+    if (key.includes(kw)) {
+      return res.status(200).json({ response: reply, cached: true });
+    }
+  }
 
-  // PASO 1: Buscar en caché de respuestas directas
-  for (const [key, value] of Object.entries(responseCache)) {
-    if (lowerMessage.includes(key.toLowerCase())) {
-      return res.status(200).json({ 
-        response: value,
-        cached: true,
-        steps: 1
-});
-}
-}
-
-  // PASO 2: Detectar palabras clave y responder rápido
-  for (const [keyword, cachedQuestion] of Object.entries(quickKeywords)) {
-    if (lowerMessage.includes(keyword)) {
-      const response = responseCache[cachedQuestion];
-      return res.status(200).json({ 
-        response: response,
-        cached: true,
-        steps: 1
-});
-}
-}
-
-  // PASO 3: Si no está en caché, usar IA pero con prompt optimizado
+  // Step 2: Call Claude API (only for new questions)
   try {
     const client = new Anthropic();
+    const result = await client.messages.create({
+      model: "claude-3-haiku-20240307",
+      max_tokens: 150,
+      system: SYSTEM,
+      messages: [{ role: "user", content: message }]
+    });
 
-    const systemPrompt = `Eres el agente VIP de VIP Experiences, especialista en Hotel Xcaret Arte.
-INFORMACIÓN CLAVE:
-- Hotel 5 estrellas todo incluido en Cancún
-- Precio desde $4,500 USD por persona (vuelo+hotel+traslados)
-- Incluye: vuelo redondo, traslados, alimentos premium, acceso a parques Xcaret/Xel-Há
-- Disponible todo el año
+    const response = result.content[0].text;
 
-INSTRUCCIONES:
-1. Responde SOLO en español
-2. Sé cálido y profesional
-3. Máximo 3 oraciones por respuesta
-4. Si preguntan sobre reserva: pide ciudad de origen, número de personas y fechas
-5. Si es pregunta fuera del tema: responde amablemente pero enfócate en el hotel`;
+    // Step 3: Cache the new answer and return
+    const firstWord = key.split(" ")[0];
+    if (firstWord.length > 3) CACHE[firstWord] = response;
 
-    const response = await client.messages.create({
-      model: "claude-3-5-sonnet-20241022",
-      max_tokens: 300, // Limitar tokens para respuesta rápida
-      messages: [
-{
-          role: "user",
-          content: message
-}
-      ],
-      system: systemPrompt
-});
+    return res.status(200).json({ response, cached: false });
 
-    const aiResponse = response.content[0].text;
-
-    // PASO 4: Guardar en caché para futuras búsquedas similares
-    responseCache[message] = aiResponse;
-
-    return res.status(200).json({ 
-      response: aiResponse,
-      cached: false,
-      steps: 3,
-      model: "claude-3-5-sonnet"
-});
-
-} catch (error) {
-    console.error("Error calling Anthropic API:", error);
-    return res.status(500).json({ 
-      error: "Error processing request",
-      details: error.message,
-      fallback: "Hubo un problema. Escríbenos a WhatsApp: wa.me/529981533910"
-});
+  } catch (err) {
+    console.error(err.message);
+    return res.status(200).json({
+      response: "Hubo un problema con mi conexión. Escríbenos directo a WhatsApp: wa.me/529981533910",
+      cached: false
+    });
   }
-}
+};
