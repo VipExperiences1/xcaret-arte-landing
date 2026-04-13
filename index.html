@@ -260,45 +260,100 @@ footer{background:#0A0A18;border-top:1px solid rgba(0,181,184,.15);padding:40px 
   .waf{padding:14px;border-radius:50%;width:56px;height:56px;justify-content:center;font-size:0}
   .waf svg{width:26px;height:26px}
 }
+
+/* ===== CRO v3 EXACT CHANGES ===== */
+.nav-logo{display:flex;align-items:center}
+.hero h1{font-size:clamp(2rem,5vw,3.6rem);line-height:1.12;font-weight:800}
+.hero h1 em{color:var(--turq);font-style:italic;display:block;margin-top:4px}
+.hero .sub{font-size:clamp(.95rem,2.2vw,1.12rem);color:rgba(255,255,255,.9);max-width:560px;line-height:1.7;margin-bottom:28px;font-family:'Playfair Display',serif;font-style:italic}
+.hero .sub strong{color:var(--turq);font-weight:600;font-style:normal}
+.mtrust{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.8rem;color:rgba(255,255,255,.72);margin-top:14px;align-items:center}
+.mtrust span{display:inline-flex;align-items:center;gap:5px}
+.mtrust span::before{content:"✔";color:#4ade80;font-weight:700;font-size:.9rem}
+.promobar{background:linear-gradient(135deg,#1a0404,#2d0a0a);border-top:3px solid var(--red);border-bottom:3px solid var(--red);padding:28px 5%}
+.pa-badge{display:inline-flex;align-items:center;gap:6px;background:var(--red);color:#fff;font-size:.74rem;font-weight:800;letter-spacing:2px;padding:6px 14px;border-radius:4px;margin-bottom:12px;text-transform:uppercase;animation:badgePulse 1.5s infinite}
+@keyframes badgePulse{0%,100%{opacity:1}50%{opacity:.8}}
+.pa-title{font-size:clamp(1.1rem,2.8vw,1.45rem);font-weight:800;color:#fff;margin-bottom:8px}
+.pa-sub{font-size:.9rem;color:rgba(255,255,255,.75);margin-bottom:16px;line-height:1.5}
+.pa-items{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;font-size:.84rem}
+.pa-items span{color:rgba(255,255,255,.85);display:inline-flex;align-items:center;gap:6px}
+.ctas-mid{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;padding:28px 5%;background:var(--dark2);border-top:1px solid rgba(0,181,184,.1)}
+.bwa.bout{background:transparent;border:2px solid var(--wa);color:var(--wa);font-weight:700}
+.bwa.bout:hover{background:var(--wa);color:#fff}
+.bene-list{list-style:none;padding:0;margin:28px auto 0;max-width:740px;display:grid;gap:14px}
+.bene-list li{display:flex;align-items:flex-start;gap:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-left:3px solid var(--turq);border-radius:0 10px 10px 0;padding:16px 18px;transition:background .2s}
+.bene-list li:hover{background:rgba(0,181,184,.07)}
+.bi2{display:flex;align-items:center;justify-content:center;width:44px;height:44px;min-width:44px;border-radius:50%;background:linear-gradient(135deg,var(--turq),var(--purple));color:#fff;flex-shrink:0}
+.bt2{font-weight:700;font-size:.97rem;color:#fff;margin-bottom:4px}
+.bd2{font-size:.84rem;color:rgba(255,255,255,.62);line-height:1.45}
+.sp-bar{background:var(--dark3);padding:22px 5%;text-align:center;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+.sp-count{font-size:1.4rem;font-weight:800;color:var(--turq);display:block;margin-bottom:4px}
+.sp-text{font-size:.87rem;color:rgba(255,255,255,.65)}
+.sp-stars{color:#FFD700;font-size:1.15rem;letter-spacing:3px;margin-bottom:6px;display:block}
+.fsec{background:linear-gradient(135deg,var(--dark2),var(--dark3));padding:72px 5%}
+.fw{max-width:580px;margin:0 auto}
+.form-badge{display:inline-block;background:linear-gradient(135deg,var(--turq),var(--purple));color:#fff;font-size:.75rem;font-weight:700;letter-spacing:1.5px;padding:5px 16px;border-radius:20px;margin-bottom:18px}
+.fsec h2{font-size:clamp(1.5rem,3.5vw,2.2rem);margin-bottom:8px;font-family:'Playfair Display',serif}
+.fsub{font-size:.9rem;color:rgba(255,255,255,.6);margin-bottom:28px;line-height:1.55}
+#lf{display:flex;flex-direction:column;gap:14px}
+.fg{display:flex;flex-direction:column;gap:5px}
+.fg label{font-size:.78rem;font-weight:700;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.9px}
+.fg input,.fg select{background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.15);border-radius:8px;padding:13px 16px;color:#fff;font-size:.95rem;font-family:inherit;transition:border-color .2s;-webkit-appearance:none;-moz-appearance:none}
+.fg input:focus,.fg select:focus{outline:none;border-color:var(--turq);background:rgba(0,181,184,.06)}
+.fg input::placeholder{color:rgba(255,255,255,.3)}
+.fg select option{background:#1A1A2E;color:#fff}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fs-btn{background:linear-gradient(135deg,var(--turq),var(--turq2));border:none;border-radius:8px;padding:16px 24px;color:#fff;font-size:1rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;transition:opacity .2s;font-family:inherit;box-shadow:0 4px 20px rgba(0,181,184,.3)}
+.fs-btn:hover{opacity:.9}
+.form-trust-row{display:flex;flex-direction:column;gap:6px;margin-top:14px;align-items:center}
+.form-trust-row span{font-size:.78rem;color:rgba(255,255,255,.5);display:inline-flex;align-items:center;gap:5px}
+.form-trust-row span::before{content:"✔";color:#4ade80;font-weight:700}
+.ts{background:var(--dark);padding:72px 5%}
+.tg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:32px;max-width:960px;margin-left:auto;margin-right:auto}
+.tc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:10px}
+.tst{color:#FFD700;font-size:1.1rem;letter-spacing:2px}
+.tt{font-size:.92rem;color:rgba(255,255,255,.78);font-style:italic;line-height:1.6;flex:1}
+.ta{font-size:.83rem;font-weight:700;color:var(--turq)}
+.td{font-size:.77rem;color:rgba(255,255,255,.38)}
+.waf{position:fixed;bottom:22px;right:18px;z-index:9999;background:var(--wa);color:#fff;border-radius:50px;padding:12px 20px 12px 14px;display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:.88rem;box-shadow:0 4px 24px rgba(37,211,102,.5);animation:waPulse 2s infinite}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 32px rgba(37,211,102,.85)}}
+@media(max-width:680px){
+  .hero{padding:95px 5% 52px}
+  .hero h1{font-size:1.85rem}
+  .bwa{padding:14px 18px;font-size:.92rem;width:100%;justify-content:center}
+  .bwa.bout{width:100%;justify-content:center}
+  .ctas{flex-direction:column;gap:10px}
+  .ctas-mid{flex-direction:column;padding:20px 5%}
+  .ctas-mid .bwa,.ctas-mid .bwa.bout{width:100%;justify-content:center}
+  .fr{grid-template-columns:1fr}
+  .tg{grid-template-columns:1fr}
+  .bene-list li{padding:14px}
+  .pa-items{flex-direction:column;align-items:center}
+  .waf{padding:14px;border-radius:50%;width:58px;height:58px;justify-content:center;overflow:hidden}
+  .waf span{display:none}
+  .waf svg{width:26px;height:26px;flex-shrink:0}
+}
 </style>
 <body>
 <div class="ub">🔥 Solo quedan <b id="sc">7 paquetes</b> disponibles esta temporada — <b style="color:#FFD700">Precio sube el lunes</b></div><nav>
   <div class="nav-logo"><img src="img/logo.png" alt="VIP Experiences" style="height:40px;width:auto;display:block;filter:brightness(0) invert(1)"></div>
-  <a href="https://wa.me/529981533910?text=Hola,%20vi%20su%20landing%20de%20Xcaret%20Arte%20y%20quiero%20informaci%C3%B3n" class="nav-cta" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.549 4.116 1.508 5.85L0 24l6.335-1.481A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.757.878.894-3.648-.234-.374A9.818 9.818 0 1112 21.818z"/></svg> Cotizar gratis</a>
+  <a href="https://wa.me/529981533910?text=Hola,%20vi%20su%20landing%20de%20Xcaret%20Arte%20y%20quiero%20informaci%C3%B3n%20para%20viajar" class="nav-cta" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.549 4.116 1.508 5.85L0 24l6.335-1.481A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.757.878.894-3.648-.234-.374A9.818 9.818 0 1112 21.818z"/></svg> Cotizar gratis</a>
 </nav><section class="hero" id="inicio">
   <div class="hbg" style="background-image:url('img/aerial.jpg'),url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1600&q=80')"></div>
   <div class="hov"></div>
   <div class="hc">
     <div class="badge">⭐ Agencia Certificada Hoteles Xcaret</div>
-    <h1>Esto NO es un hotel…<br><em>es la experiencia ALL FUN INCLUSIVE más exclusiva de México 🎨</em></h1>
-    <p class="sub">Vive Hotel Xcaret Arte con acceso ilimitado a parques, gastronomía premium de autor y <strong>lujo total todo incluido</strong> — solo para adultos.</p>
+    <h1>Esto NO es un hotel…<em>es TODO un destino incluido 🎨</em></h1>
+    <p class="sub">Viaja sin preocuparte por nada: <strong>parques, comida, transporte</strong> y experiencias ya incluidos</p>
     <div class="ctas">
-      <a href="https://wa.me/529981533910?text=Hola,%20vi%20su%20landing%20de%20Xcaret%20Arte%20y%20quiero%20informaci%C3%B3n" class="bwa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.549 4.116 1.508 5.85L0 24l6.335-1.481A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.757.878.894-3.648-.234-.374A9.818 9.818 0 1112 21.818z"/></svg> Cotizar por WhatsApp</a>
+      <a href="https://wa.me/529981533910?text=Hola,%20vi%20su%20landing%20de%20Xcaret%20Arte%20y%20quiero%20informaci%C3%B3n%20para%20viajar" class="bwa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.549 4.116 1.508 5.85L0 24l6.335-1.481A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.757.878.894-3.648-.234-.374A9.818 9.818 0 1112 21.818z"/></svg> Cotizar por WhatsApp</a>
       <a href="#cotizar" class="bwa bout">Ver disponibilidad</a>
     </div>
-    <div class="mtrust">
-      <span>✔ Atención personalizada en minutos</span>
-      <span>·</span>
-      <span>✔ Sin costo de asesoría</span>
-      <span>·</span>
-      <span>✔ Agencia certificada Xcaret</span>
-    </div>
+    <div class="mtrust"><span> Atención personalizada en minutos</span><span> Asesor experto en Xcaret</span><span> Más de 100 clientes atendidos</span></div>
   </div>
 </section>
 
-<div class="promobar">
-  <div class="promo-alert">
-    <div class="pa-badge">🚨 PROMOCIÓN ACTIVA ESTA SEMANA</div>
-    <div class="pa-title">Tarifas especiales sujetas a disponibilidad inmediata</div>
-    <div class="pa-sub">Últimas habitaciones con este beneficio — Al agotarse, el precio aumenta sin previo aviso</div>
-    <div class="pa-items">
-      <span>🏨 Suites con vista al mar</span>
-      <span>✈️ Vuelo incluido</span>
-      <span>🍽️ Gastronomía ilimitada</span>
-      <span>🌊 3 Parques Xcaret</span>
-    </div>
-  </div>
-</div><div class="stats">
+<div class="promobar"><div class="promo-alert"><div class="pa-badge">🚨 PROMOCIÓN ACTIVA ESTA SEMANA</div><div class="pa-title">Tarifas especiales por tiempo limitado</div><div class="pa-sub">⏳ Disponibilidad sujeta a ocupación — Cupo muy limitado</div><div class="pa-items"><span>🏨 Suites con vista al mar</span><span>✈️ Vuelo incluido</span><span>🍽️ Gastronomía ilimitada</span><span>🌊 3 Parques Xcaret incluidos</span></div><div style="margin-top:18px;text-align:center"><a href="https://wa.me/529981533910?text=Hola,%20vi%20su%20landing%20de%20Xcaret%20Arte%20y%20quiero%20informaci%C3%B3n%20para%20viajar" class="bwa" target="_blank" rel="noopener" style="display:inline-flex"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.549 4.116 1.508 5.85L0 24l6.335-1.481A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.757.878.894-3.648-.234-.374A9.818 9.818 0 1112 21.818z"/></svg> Cotizar ahora</a></div></div></div><div class="stats">
   <div><span class="sn">900+</span><span class="sl">Viajeros VIP</span></div>
   <div><span class="sn">5★</span><span class="sl">Calificación</span></div>
   <div><span class="sn">100%</span><span class="sl">Todo incluido</span></div>
@@ -338,7 +393,7 @@ class="img-section" id="beneficios">
 </div>
 
 <!-- SECTION 2: Kayak (reversed) -->
-<div <div class="ctas-mid"><a href="https://wa.me/529981533910?text=Hola,%20vi%20su%20landing%20de%20Xcaret%20Arte%20y%20quiero%20informaci%C3%B3n" class="bwa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.549 4.116 1.508 5.85L0 24l6.335-1.481A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.757.878.894-3.648-.234-.374A9.818 9.818 0 1112 21.818z"/></svg> Cotizar por WhatsApp</a><a href="#cotizar" class="bwa bout">Ver disponibilidad</a></div>class="img-section rev">
+<div <div class="ctas-mid"><a href="https://wa.me/529981533910?text=Hola,%20vi%20su%20landing%20de%20Xcaret%20Arte%20y%20quiero%20informaci%C3%B3n%20para%20viajar" class="bwa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.549 4.116 1.508 5.85L0 24l6.335-1.481A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.757.878.894-3.648-.234-.374A9.818 9.818 0 1112 21.818z"/></svg> Cotizar por WhatsApp</a><a href="#cotizar" class="bwa bout">Ver disponibilidad</a></div>class="img-section rev">
   <div class="img-half">
     <img src="img/kayak.jpg" alt="Kayak en formaciones rocosas Xcaret Arte" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80'">
     <div class="gi-label">Kayak entre formaciones únicas</div>
@@ -352,21 +407,20 @@ class="img-section" id="beneficios">
 </div>
 
 <!-- BENEFITS GRID -->
-<div class="ctas-mid"><a href="https://wa.me/529981533910?text=Hola,%20vi%20su%20landing%20de%20Xcaret%20Arte%20y%20quiero%20informaci%C3%B3n" class="bwa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.549 4.116 1.508 5.85L0 24l6.335-1.481A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.757.878.894-3.648-.234-.374A9.818 9.818 0 1112 21.818z"/></svg> Recibir promoción</a><a href="https://wa.me/529981533910?text=Hola,%20vi%20su%20landing%20de%20Xcaret%20Arte%20y%20quiero%20informaci%C3%B3n" class="bwa bout" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.549 4.116 1.508 5.85L0 24l6.335-1.481A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.757.878.894-3.648-.234-.374A9.818 9.818 0 1112 21.818z"/></svg> Ver disponibilidad</a></div>
+<div class="ctas-mid"><a href="https://wa.me/529981533910?text=Hola,%20vi%20su%20landing%20de%20Xcaret%20Arte%20y%20quiero%20informaci%C3%B3n%20para%20viajar" class="bwa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.549 4.116 1.508 5.85L0 24l6.335-1.481A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.757.878.894-3.648-.234-.374A9.818 9.818 0 1112 21.818z"/></svg> Recibir promoción</a><a href="https://wa.me/529981533910?text=Hola,%20vi%20su%20landing%20de%20Xcaret%20Arte%20y%20quiero%20informaci%C3%B3n%20para%20viajar" class="bwa bout" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.549 4.116 1.508 5.85L0 24l6.335-1.481A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.757.878.894-3.648-.234-.374A9.818 9.818 0 1112 21.818z"/></svg> Ver disponibilidad</a></div>
 <section class="sec" style="background:var(--dark2)">
   <span class="slbl">✦ Todo lo que incluye</span>
   <h2>No es un hotel.<br><em>Es la experiencia de lujo más completa del Caribe.</em></h2>
   <p class="par">Imagina despertar frente al Caribe, desayunar gourmet, nadar en cenotes y terminar el día con el mejor show de México. <strong>Sin extras, sin sorpresas — todo incluido desde el primer día.</strong></p>
   <ul class="bene-list">
-    <li><span class="bi2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg></span><div><div class="bt2">Experiencias artísticas inmersivas</div><div class="bd2">Talleres de arte maya, murales vivos, shows nocturnos únicos. Cultura y lujo al mismo tiempo.</div></div></li>
-    <li><span class="bi2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2M7 2v20M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3v7"/></svg></span><div><div class="bt2">Gastronomía de autor ilimitada</div><div class="bd2">Más de 9 restaurantes de alta cocina. Mariscos frescos, vinos premium, menús de chef reconocido. Sin límite, sin costo extra.</div></div></li>
-    <li><span class="bi2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M2 12c.5-1 1.5-2 3-2s2.5 1 3 2 1.5 2 3 2 2.5-1 3-2 1.5-2 3-2 2.5 1 3 2M2 17c.5-1 1.5-2 3-2s2.5 1 3 2 1.5 2 3 2 2.5-1 3-2 1.5-2 3-2 2.5 1 3 2"/></svg></span><div><div class="bt2">Acceso a todos los parques Xcaret</div><div class="bd2">Xcaret, Xel-Há y más parques incluidos. Cenotes, ríos subterráneos, snorkel, kayak. La naturaleza más espectacular del Caribe.</div></div></li>
-    <li><span class="bi2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M17.8 19.2L16 11l3.5-3.5A3 3 0 0015.3 3L12 6.5 4.8 4.8a.5.5 0 00-.5.13l-.8.8a.5.5 0 00.06.69L9 10.5 7 12H4l-1 1 3 2 2 3 1-1v-3l1.5-2 4.5 4.5a.5.5 0 00.69.06l.8-.8a.5.5 0 00.13-.5z"/></svg></span><div><div class="bt2">Transporte aeropuerto-hotel incluido</div><div class="bd2">Coordinamos tu vuelo desde cualquier ciudad + traslado privado aeropuerto-hotel. Tú solo disfruta, nosotros resolvemos todo.</div></div></li>
-    <li><span class="bi2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><div><div class="bt2">Hotel solo adultos — ambiente exclusivo</div><div class="bd2">Diseño inspirado en arte mexicano, vista al mar, privacidad total. Un refugio de lujo donde la paz y el romanticismo son la norma.</div></div></li>
-    <li><span class="bi2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></span><div><div class="bt2">Asesoría VIP personalizada</div><div class="bd2">Un agente dedicado antes, durante y después del viaje. Sin estrés, sin complicaciones, todo resuelto para ti.</div></div></li>
+    <li><span class="bi2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M2 12c.5-1 1.5-2 3-2s2.5 1 3 2 1.5 2 3 2 2.5-1 3-2 1.5-2 3-2 2.5 1 3 2M2 17c.5-1 1.5-2 3-2s2.5 1 3 2 1.5 2 3 2 2.5-1 3-2 1.5-2 3-2 2.5 1 3 2"/></svg></span><div><div class="bt2">Acceso ilimitado a parques Xcaret</div><div class="bd2">Xcaret, Xel-Há y más. Cenotes, ríos subterráneos, snorkel, kayak — incluidos en tu paquete.</div></div></li>
+    <li><span class="bi2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2M7 2v20M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3v7"/></svg></span><div><div class="bt2">Gastronomía premium ilimitada</div><div class="bd2">Más de 9 restaurantes de alta cocina. Chef de autor, mariscos frescos, vinos premium. Sin límite.</div></div></li>
+    <li><span class="bi2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M17.8 19.2L16 11l3.5-3.5A3 3 0 0015.3 3L12 6.5 4.8 4.8a.5.5 0 00-.5.13l-.8.8a.5.5 0 00.06.69L9 10.5 7 12H4l-1 1 3 2 2 3 1-1v-3l1.5-2 4.5 4.5a.5.5 0 00.69.06l.8-.8a.5.5 0 00.13-.5z"/></svg></span><div><div class="bt2">Transporte aeropuerto-hotel incluido</div><div class="bd2">Vuelo coordinado desde cualquier ciudad + traslado privado aeropuerto-hotel y regreso.</div></div></li>
+    <li><span class="bi2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg></span><div><div class="bt2">Experiencias artísticas exclusivas</div><div class="bd2">Talleres de arte maya, murales vivos, shows nocturnos únicos. Cultura auténtica y lujo.</div></div></li>
+    <li><span class="bi2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><div><div class="bt2">Hotel solo adultos</div><div class="bd2">Ambiente exclusivo y romántico. Diseño inspirado en arte mexicano, vista al mar, privacidad total.</div></div></li>
   </ul>
   <div style="text-align:center;margin-top:32px">
-    <a href="https://wa.me/529981533910?text=Hola,%20vi%20su%20landing%20de%20Xcaret%20Arte%20y%20quiero%20informaci%C3%B3n" class="bwa" target="_blank" rel="noopener" style="display:inline-flex"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.549 4.116 1.508 5.85L0 24l6.335-1.481A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.757.878.894-3.648-.234-.374A9.818 9.818 0 1112 21.818z"/></svg> Cotizar por WhatsApp</a>
+    <a href="https://wa.me/529981533910?text=Hola,%20vi%20su%20landing%20de%20Xcaret%20Arte%20y%20quiero%20informaci%C3%B3n%20para%20viajar" class="bwa" target="_blank" rel="noopener" style="display:inline-flex"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.549 4.116 1.508 5.85L0 24l6.335-1.481A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.757.878.894-3.648-.234-.374A9.818 9.818 0 1112 21.818z"/></svg> Cotizar por WhatsApp</a>
     <div class="mtrust" style="justify-content:center;margin-top:10px"><span>✔ Atención personalizada en minutos</span><span>·</span><span>✔ Sin costo de asesoría</span></div>
   </div>
 </section>
@@ -384,7 +438,7 @@ class="img-section" style="background:var(--dark)">
 </div>
 
 <!-- INCLUDES -->
-<div class="ctas-mid"><a href="https://wa.me/529981533910?text=Hola,%20vi%20su%20landing%20de%20Xcaret%20Arte%20y%20quiero%20informaci%C3%B3n" class="bwa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.549 4.116 1.508 5.85L0 24l6.335-1.481A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.757.878.894-3.648-.234-.374A9.818 9.818 0 1112 21.818z"/></svg> Cotizar por WhatsApp</a><a href="#cotizar" class="bwa bout">Ver mi paquete</a></div>
+<div class="ctas-mid"><a href="https://wa.me/529981533910?text=Hola,%20vi%20su%20landing%20de%20Xcaret%20Arte%20y%20quiero%20informaci%C3%B3n%20para%20viajar" class="bwa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.549 4.116 1.508 5.85L0 24l6.335-1.481A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.757.878.894-3.648-.234-.374A9.818 9.818 0 1112 21.818z"/></svg> Cotizar por WhatsApp</a><a href="#cotizar" class="bwa bout">Ver mi paquete</a></div>
 <section class="sec" id="paquete" style="background:var(--dark2)">
   <span class="slbl">🎁 Paquete VIP completo</span>
   <h2>Todo resuelto.<br><em>Tú solo disfruta.</em></h2>
@@ -424,7 +478,7 @@ class="img-section rev" id="galeria">
 </div>
 
 <!-- TESTIMONIALS -->
-<div class="ctas-mid"><a href="https://wa.me/529981533910?text=Hola,%20vi%20su%20landing%20de%20Xcaret%20Arte%20y%20quiero%20informaci%C3%B3n" class="bwa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.549 4.116 1.508 5.85L0 24l6.335-1.481A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.757.878.894-3.648-.234-.374A9.818 9.818 0 1112 21.818z"/></svg> Recibir promoción</a><a href="#cotizar" class="bwa bout">Cotizar mi paquete</a></div>
+<div class="ctas-mid"><a href="https://wa.me/529981533910?text=Hola,%20vi%20su%20landing%20de%20Xcaret%20Arte%20y%20quiero%20informaci%C3%B3n%20para%20viajar" class="bwa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.549 4.116 1.508 5.85L0 24l6.335-1.481A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.757.878.894-3.648-.234-.374A9.818 9.818 0 1112 21.818z"/></svg> Recibir promoción</a><a href="#cotizar" class="bwa bout">Cotizar mi paquete</a></div>
 <div class="sp-bar">
   <span class="sp-stars">★★★★★</span>
   <span class="sp-count">+100 clientes ya viajaron con nosotros</span>
@@ -445,7 +499,7 @@ class="img-section rev" id="galeria">
     <div class="tc"><div class="tst">★★★★★</div><p class="tt">"Nunca había vivido algo así. El arte maya, los cenotes, la gastronomía... fue una experiencia que nos cambió. Y VIP Experiences nos consiguió una tarifa increíble."</p><div class="ta">— Rodrigo M., Monterrey</div><div class="td">Hotel Xcaret Arte · Febrero 2025</div></div>
   </div>
   <div style="text-align:center;margin-top:32px">
-    <a href="https://wa.me/529981533910?text=Hola,%20vi%20su%20landing%20de%20Xcaret%20Arte%20y%20quiero%20informaci%C3%B3n" class="bwa" target="_blank" rel="noopener" style="display:inline-flex"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.549 4.116 1.508 5.85L0 24l6.335-1.481A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.757.878.894-3.648-.234-.374A9.818 9.818 0 1112 21.818z"/></svg> Quiero vivir esto también</a>
+    <a href="https://wa.me/529981533910?text=Hola,%20vi%20su%20landing%20de%20Xcaret%20Arte%20y%20quiero%20informaci%C3%B3n%20para%20viajar" class="bwa" target="_blank" rel="noopener" style="display:inline-flex"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.549 4.116 1.508 5.85L0 24l6.335-1.481A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.757.878.894-3.648-.234-.374A9.818 9.818 0 1112 21.818z"/></svg> Quiero vivir esto también</a>
     <div class="mtrust" style="justify-content:center;margin-top:10px"><span>✔ Atención personalizada en minutos</span><span>·</span><span>✔ Sin costo de asesoría</span></div>
   </div>
 </section>
@@ -457,16 +511,16 @@ class="img-section rev" id="galeria">
       <p class="fsub">Completa el formulario y te contactamos en menos de 5 minutos con la mejor tarifa disponible para tus fechas.</p>
     </div>
     <form id="lf" onsubmit="handleForm(event)">
-      <div class="fg"><label>Tu nombre</label><input type="text" id="fn" placeholder="Ej: Ana García" required autocomplete="name"></div>
-      <div class="fg"><label>WhatsApp (con código de país)</label><input type="tel" id="fp" placeholder="+52 998 123 4567" required autocomplete="tel"></div>
-      <div class="fr">
-        <div class="fg"><label>¿Cuándo quieres ir?</label><input type="month" id="fd" required></div>
-        <div class="fg"><label>¿Cuántos viajeros?</label><select id="fgs"><option value="">Selecciona</option><option value="2 personas">2 personas (pareja)</option><option value="3 personas">3 personas</option><option value="4 personas">4 personas</option><option value="5 o más">5 o más</option></select></div>
+      <div class="fg"><label>Nombre</label><input type="text" id="fn" placeholder="Tu nombre completo" required autocomplete="name"></div>
+      <div class="fg"><label>WhatsApp</label><input type="tel" id="fp" placeholder="+52 998 123 4567" required autocomplete="tel"></div>
+      <div class="fg"><label>Fechas de viaje</label><input type="month" id="fd" required></div>
+      <div class="fg"><label>Número de personas</label><select id="fgs"><option value="">Selecciona</option><option value="2 personas">2 personas (pareja)</option><option value="3 personas">3 personas</option><option value="4 personas">4 personas</option><option value="5 o más">5 o más personas</option></select></div>
+      <button type="submit" class="fs-btn"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.549 4.116 1.508 5.85L0 24l6.335-1.481A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.757.878.894-3.648-.234-.374A9.818 9.818 0 1112 21.818z"/></svg> Recibir cotización gratis por WhatsApp</button>
+      <div class="form-trust-row">
+        <span> Atención personalizada en minutos</span>
+        <span> Asesor experto en Xcaret</span>
+        <span> Más de 100 clientes atendidos</span>
       </div>
-      <div class="fg"><label>Ciudad de origen (para vuelo)</label><input type="text" id="fc2" placeholder="Ej: Ciudad de México, Guadalajara…"></div>
-      <div class="fg"><label>¿Cuántas noches?</label><select id="fn2"><option value="">Selecciona</option><option value="3 noches">3 noches</option><option value="4 noches">4 noches</option><option value="5 noches">5 noches</option><option value="6 o más noches">6 o más noches</option></select></div>
-      <button type="submit" class="fs"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.549 4.116 1.508 5.85L0 24l6.335-1.481A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.757.878.894-3.648-.234-.374A9.818 9.818 0 1112 21.818z"/></svg> Enviar y recibir cotización gratis</button>
-      <p class="form-trust">🔒 Tu información es privada. Solo usamos tus datos para contactarte por WhatsApp.</p>
     </form>
   </div>
 </section>
@@ -495,9 +549,7 @@ class="img-section rev" id="galeria">
 
 <!-- FLOATING BUTTON -->
 <div class="waft">💬 Escríbenos ahora</div>
-<a href="https://wa.me/529981533910?text=Hola!%20Quiero%20cotizar%20Hotel%20Xcaret%20Arte%20%F0%9F%8F%96%EF%B8%8F" class="waf" target="_blank" title="Cotizar por WhatsApp">
-  <svg viewBox="0 0 24 24" width="30" height="30" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.948-1.417A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
-</a>
+<a href="https://wa.me/529981533910?text=Hola!%20Quiero%20cotizar%20Hotel%20Xcaret%20Arte%20%F0%9F%8F%96%EF%B8%8<a href="https://wa.me/529981533910?text=Hola,%20vi%20su%20landing%20de%20Xcaret%20Arte%20y%20quiero%20informaci%C3%B3n%20para%20viajar" class="waf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.549 4.116 1.508 5.85L0 24l6.335-1.481A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.213-3.757.878.894-3.648-.234-.374A9.818 9.818 0 1112 21.818z"/></svg><span>Escribenos ahora</span></a>
 
 <!-- SCRIPTS -->
 
@@ -506,16 +558,13 @@ F" class="waf" target="_blank" title="Cotizar por WhatsApp">
 </a>
 <script>
 (function(){
-  // Countdown
-  const end = new Date(); end.setDate(end.getDate() + 3);
+  const end=new Date(); end.setDate(end.getDate()+3);
   function tick(){
-    const d = end - new Date();
-    if(d<=0) return;
-    const h=Math.floor(d/3600000), m=Math.floor(d%3600000/60000), sc=Math.floor(d%60000/1000);
-    ['ch','cm','cs2'].forEach((id,i)=>{const el=document.getElementById(id);if(el)el.textContent=[h,m,sc][i].toString().padStart(2,'0');});
+    const d=end-new Date(); if(d<=0)return;
+    const hh=Math.floor(d/3600000),mm=Math.floor(d%3600000/60000),ss=Math.floor(d%60000/1000);
+    ['ch','cm','cs2'].forEach((id,i)=>{const el=document.getElementById(id);if(el)el.textContent=[hh,mm,ss][i].toString().padStart(2,'0');});
   }
   tick(); setInterval(tick,1000);
-  // Scarcity counter
   const sc=document.getElementById('sc');
   if(sc){let n=7;setInterval(()=>{if(Math.random()<0.04&&n>2){n--;sc.textContent=n+' paquetes';}},35000);}
 })();
@@ -526,17 +575,24 @@ function handleForm(e){
   const fp=document.getElementById('fp')?.value||'';
   const fd=document.getElementById('fd')?.value||'';
   const fgs=document.getElementById('fgs')?.value||'';
-  const fc2=document.getElementById('fc2')?.value||'';
-  const fn2=document.getElementById('fn2')?.value||'';
-  // Save lead data for CRM integration
-  try{localStorage.setItem('vip_lead_xcaret',JSON.stringify({fn,fp,fd,fgs,fc2,fn2,ts:new Date().toISOString()}));}catch(err){}
-  const msg=['Hola, quiero cotizar Hotel Xcaret Arte 🏖️',fn?'Nombre: '+fn:'',fp?'WhatsApp: '+fp:'',fd?'Fechas: '+fd:'',fgs?'Viajeros: '+fgs:'',fc2?'Ciudad: '+fc2:'',fn2?'Noches: '+fn2:''].filter(Boolean).join('%0A');
-  window.open('https://wa.me/529981533910?text='+msg,'_blank');
+  window.vipLead={nombre:fn,whatsapp:fp,fechas:fd,personas:fgs,ts:new Date().toISOString()};
+  try{localStorage.setItem('vip_lead_xcaret',JSON.stringify(window.vipLead));}catch(err){}
+  const parts=['Hola, vi su landing de Xcaret Arte y quiero información para viajar 🏖️'];
+  if(fn)parts.push('Nombre: '+fn);
+  if(fp)parts.push('WhatsApp: '+fp);
+  if(fd)parts.push('Fechas: '+fd);
+  if(fgs)parts.push('Personas: '+fgs);
+  window.open('https://wa.me/529981533910?text='+parts.join('%0A'),'_blank');
 }
 
-// Scroll reveal
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:0.1});
-document.querySelectorAll('.bene-list li,.tc,.img-section,.bc').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(24px)';el.style.transition='opacity .45s ease,transform .45s ease';obs.observe(el);});
+(function(){
+  const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:0.1});
+  document.querySelectorAll('.bene-list li,.tc,.img-section,.bc,.promo-alert').forEach(el=>{
+    el.style.opacity='0';el.style.transform='translateY(22px)';
+    el.style.transition='opacity .45s ease,transform .45s ease';
+    obs.observe(el);
+  });
+})();
 </script>
 </body>
 </html>
