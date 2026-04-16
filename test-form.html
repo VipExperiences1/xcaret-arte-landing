@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+  <html lang="es">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Test Form - Kommo Integration</title>
+      <style>
+          body {
+              font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+            }
+        .form-container {
+                      background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+        h1 {
+                      color: #333;
+            text-align: center;
+}
+        .form-group {
+                      margin-bottom: 15px;
+}
+        label {
+                      display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+}
+        input {
+                      width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+}
+                      button {
+                          width: 100%;
+            padding: 12px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+}
+        button:hover {
+                      background: #0056b3;
+}
+        .message {
+                      margin-top: 20px;
+            padding: 15px;
+                          border-radius: 4px;
+            text-align: center;
+            display: none;
+}
+        .message.success {
+            background: #d4edda;
+                        color: #155724;
+                          border: 1px solid #c3e6cb;
+            display: block;
+}
+                  .message.error {
+            background: #f8d7da;
+                        color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+}
+              </style>
+</head>
+              <body>
+    <div class="form-container">
+                            <h1>Test Kommo Integration</h1>
+        <form id="testForm">
+            <div class="form-group">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                          <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone" required>
+                            </div>
+            <button type="submit">Enviar al CRM</button>
+        </form>
+        <div id="message" class="message"></div>
+                </div>
+
+    <script>
+                  document.getElementById('testForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+                          const name = document.getElementById('name').value;
+                      const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const messageDiv = document.getElementById('message');
+
+                      try {
+                const response = await fetch('/api/submit-lead', {
+                    method: 'POST',
+                                    headers: {
+                        'Content-Type': 'application/json',
+},
+                    body: JSON.stringify({ name, email, phone })
+});
+
+                const data = await response.json();
+
+                              if (response.ok) {
+                                    messageDiv.textContent = '✅ Lead enviado correctamente a Kommo!';
+                    messageDiv.className = 'message success';
+                    document.getElementById('testForm').reset();
+} else {
+                    messageDiv.textContent = '❌ Error: ' + (data.error || 'Error desconocido');
+                    messageDiv.className = 'message error';
+}
+} catch (error) {
+                messageDiv.textContent = '❌ Error de conexión: ' + error.message;
+                messageDiv.className = 'message error';
+}
+});
+    </script>
+</body>
+</html>
